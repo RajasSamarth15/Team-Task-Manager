@@ -82,7 +82,7 @@ Backend:
 API Endpoints:
 
 Authentication:
-POST /api/auth/signup
+POST /api/auth/signup 
 POST /api/auth/login
 
 Projects:
