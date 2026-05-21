@@ -57,29 +57,25 @@ public class SecurityConfig {
     ) throws Exception {
 
         http
-                .cors(cors->{})
-                .csrf(csrf->csrf.disable())
+                .cors(cors -> {})
+                .csrf(csrf -> csrf.disable())
 
                 .authorizeHttpRequests(auth -> auth
 
                         .requestMatchers(
                                 "/api/auth/**"
-                        )
-                        .permitAll()
+                        ).permitAll()
 
                         .requestMatchers(
                                 "/api/projects/**"
-                        )
-                        .hasRole("ADMIN")
+                        ).hasRole("ADMIN")
 
                         .requestMatchers(
                                 "/api/tasks/**",
                                 "/api/dashboard/**"
-                        )
-                        .authenticated()
+                        ).authenticated()
 
-                        .anyRequest()
-                        .authenticated()
+                        .anyRequest().authenticated()
 
                 )
 
