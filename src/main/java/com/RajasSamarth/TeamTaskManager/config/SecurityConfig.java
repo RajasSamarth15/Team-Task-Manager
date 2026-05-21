@@ -63,7 +63,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
 
                         .requestMatchers(
-                                "/api/auth/**"
+                                "/api/auth/signup",
+                                "/api/auth/login"
                         ).permitAll()
 
                         .requestMatchers(
@@ -75,7 +76,7 @@ public class SecurityConfig {
                                 "/api/dashboard/**"
                         ).authenticated()
 
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
 
                 )
 
